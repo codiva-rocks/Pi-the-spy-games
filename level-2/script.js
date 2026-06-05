@@ -1,15 +1,15 @@
 // ── Equation data ─────────────────────────────────────────────────
 const equations = [
-  { display:"x² − 5x + 6 = 0",  zeroes:[2,3],    decoys:[-1,4,5,-2,1,6]   },
-  { display:"x² − x − 6 = 0",   zeroes:[3,-2],   decoys:[2,-3,1,6,-1,4]   },
-  { display:"x² + 3x + 2 = 0",  zeroes:[-1,-2],  decoys:[1,2,3,-3,0,4]    },
-  { display:"x² − 4 = 0",       zeroes:[2,-2],   decoys:[4,-4,1,3,0,-1]   },
-  { display:"x² − 7x + 12 = 0", zeroes:[3,4],    decoys:[2,6,-3,1,5,-4]   },
-  { display:"x² + 5x + 6 = 0",  zeroes:[-2,-3],  decoys:[2,3,-1,1,6,-6]   },
-  { display:"x² − 9 = 0",       zeroes:[3,-3],   decoys:[9,-9,1,6,2,-1]   },
-  { display:"x² − 2x − 8 = 0",  zeroes:[4,-2],   decoys:[2,-4,8,1,-1,3]   },
-  { display:"x² + x − 12 = 0",  zeroes:[3,-4],   decoys:[-3,4,2,12,-2,1]  },
-  { display:"x² − 6x + 9 = 0",  zeroes:[3,3],    decoys:[-3,6,9,2,4,1]    },
+  { display:"x² − 5x + 6 = 0",  zeroes:[2,3],    decoys:[-1,4,5,-2,1,6], sol:"(x-3)(x-2)=0 && x-3=0; x=3, x-2=0; x=2" },
+  { display:"x² − x − 6 = 0",   zeroes:[3,-2],   decoys:[2,-3,1,6,-1,4], sol:"(x-3)(x+2)=0 && x-3=0; x=3, x+2=0; x=-2" },
+  { display:"x² + 3x + 2 = 0",  zeroes:[-1,-2],  decoys:[1,2,3,-3,0,4], sol:"(x+1)(x+2)=0 && x+1=0; x=-1, x+2=0; x=-2" },
+  { display:"x² − 4 = 0",       zeroes:[2,-2],   decoys:[4,-4,1,3,0,-1], sol:"(x-2)(x+2)=0 && x-2=0; x=2, x+2=0; x=-2" },
+  { display:"x² − 7x + 12 = 0", zeroes:[3,4],    decoys:[2,6,-3,1,5,-4], sol:"(x-3)(x-4)=0 && x-3=0; x=3, x-4=0; x=4" },
+  { display:"x² + 5x + 6 = 0",  zeroes:[-2,-3],  decoys:[2,3,-1,1,6,-6], sol:"(x+2)(x+3)=0 && x+2=0; x=-2, x+3=0; x=-3" },
+  { display:"x² − 9 = 0",       zeroes:[3,-3],   decoys:[9,-9,1,6,2,-1], sol:"(x-3)(x+3)=0 && x-3=0; x=3, x+3=0; x=-3" },
+  { display:"x² − 2x − 8 = 0",  zeroes:[4,-2],   decoys:[2,-4,8,1,-1,3], sol:"(x-4)(x+2)=0 && x-4=0; x=4, x+2=0; x=-2" },
+  { display:"x² + x − 12 = 0",  zeroes:[3,-4],   decoys:[-3,4,2,12,-2,1], sol:"(x-3)(x+4)=0 && x-3=0; x=3, x+4=0; x=-4" },
+  { display:"x² − 6x + 9 = 0",  zeroes:[3,3],    decoys:[-3,6,9,2,4,1], sol:"(x-3)(x-3)=0 && x-3=0; x=3, x-3=0; x=3" },
 ];
 
 const COLORS = [
@@ -286,7 +286,7 @@ function loadEq() {
 }
 
 function nextEq() {
-  roundResults.push({ eq: currentEq.display, caught: caughtZeroes.length, needed: currentEq.zeroes.length });
+  roundResults.push({ eq: currentEq.display, caught: caughtZeroes.length, needed: currentEq.zeroes.length, sol=currentEq.sol });
   loadEq();
 }
 
@@ -337,7 +337,7 @@ function endGame() {
 
   document.getElementById('end-score').textContent = score;
   document.getElementById('end-title').textContent =
-    score >= 8 ? '🏆 Amazing Catch!' : score >= 4 ? '🐟 Good Fishing!' : '😅 Keep Practising!';
+    score >= 8 ? '🏆 Amazing Catch!' : score >= 4 ? '🐟 Good Fishing!' : '😅 Keep Practicing!';
   document.getElementById('end-msg').textContent =
     score >= 8 ? 'Pi the Spy and friends are feasting tonight!' :
     score >= 4 ? 'A decent haul — the crew is satisfied!' :
@@ -349,7 +349,7 @@ function endGame() {
   roundResults.forEach(r => {
     const row = document.createElement('div');
     row.className = 'result-row';
-    row.innerHTML = `<span class="eq">${r.eq}</span><span class="ct">${r.caught}/${r.needed}</span>`;
+    row.innerHTML = `<span class="eq">${r.eq}</span><span class="ct">${r.caught}/${r.needed}</span><span class="sol">${r.solution}</span>`;
     list.appendChild(row);
   });
 
