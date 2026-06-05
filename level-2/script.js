@@ -286,7 +286,12 @@ function loadEq() {
 }
 
 function nextEq() {
-  roundResults.push({ eq: currentEq.display, caught: caughtZeroes.length, needed: currentEq.zeroes.length, sol=currentEq.sol });
+  roundResults.push({ 
+    eq: currentEq.display, 
+    caught: caughtZeroes.length, 
+    needed: currentEq.zeroes.length, 
+    sol: currentEq.sol 
+  });
   loadEq();
 }
 
@@ -349,7 +354,7 @@ function endGame() {
   roundResults.forEach(r => {
     const row = document.createElement('div');
     row.className = 'result-row';
-    row.innerHTML = `<span class="eq">${r.eq}</span><span class="ct">${r.caught}/${r.needed}</span><span class="sol">${r.solution}</span>`;
+    row.innerHTML = `<span class="eq">${r.eq}</span><span class="ct">${r.caught}/${r.needed}</span><span class="sol">${r.sol}</span>`;
     list.appendChild(row);
   });
 
