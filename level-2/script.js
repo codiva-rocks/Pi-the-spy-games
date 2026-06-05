@@ -342,6 +342,7 @@ function endGame() {
     score >= 8 ? 'Pi the Spy and friends are feasting tonight!' :
     score >= 4 ? 'A decent haul — the crew is satisfied!' :
     'The crew is cranky and hungry... try again!';
+  document.getElementById('end-soontocome').textContent = 'Solutions to come soon!';
 
   const list = document.getElementById('results-list');
   list.innerHTML = '';
