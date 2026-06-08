@@ -36,6 +36,29 @@ const DOOR_PROBLEMS = [
     ],
     wrongStep: 2,
     explain: 'Step 2 is wrong. √25 = ±5 — every positive number has two square roots. This gives two equations: x − 3 = 5 (so x = 8) AND x − 3 = −5 (so x = −2). Both solutions are valid and must be included.'
+  },
+  {
+    title: 'Solving x² − 3x − 10 = 0  (Factoring)',
+    problem: 'x² − 3x − 10 = 0',
+    steps: [
+      'Find two numbers that multiply to −10 and add to −3:  try −2 and 5',
+      'Factor:  (x − 2)(x + 5) = 0',
+      'Set each factor equal to zero:  x − 2 = 0  and  x + 5 = 0',
+      'Solve:  x = 2  and  x = −5'
+    ],
+    wrongStep: 1,
+    explain: 'Step 1 is wrong. −2 + 5 = 3, not −3. The correct pair is 2 and −5: (2)(−5) = −10 ✓ and 2 + (−5) = −3 ✓. The correct factoring is (x + 2)(x − 5) = 0, giving x = −2 or x = 5.'
+  },
+  {
+    title: 'Completing the Square for x² − 8x + 7 = 0',
+    problem: 'x² − 8x + 7 = 0  (solve by completing the square)',
+    steps: [
+      'Move the constant:  x² − 8x = −7',
+      'Add (8/2)² = 16 to the left side only:  x² − 8x + 16 = −7  →  (x − 4)² = −7',
+      'Take the square root:  no real solutions (cannot take √ of a negative)'
+    ],
+    wrongStep: 2,
+    explain: 'Step 2 is wrong. You must add 16 to BOTH sides, not just the left. Adding 16 to both sides gives (x − 4)² = −7 + 16 = 9. Then x − 4 = ±3, so x = 7 or x = 1.'
   }
 ];
 
@@ -79,6 +102,30 @@ const COMBAT_PROBLEMS = [
     ],
     wrongStep: 2,
     explain: 'Step 2 is wrong. −4ac = −4(−16)(1.5) = +96, not −96. The discriminant is 1600 + 96 = 1696. With √1696 ≈ 41.2, we get t = (−40 − 41.2) / −32 ≈ 2.54 seconds and t = (−40 + 41.2) / −32 ≈ −0.04 s (discard). The cannonball hits the ground after about 2.54 seconds.'
+  },
+  {
+    title: 'Ball Thrown Upward',
+    problem: 'A ball is thrown upward from 5 feet high at 32 ft/s.  h(t) = −16t² + 32t + 5.  When does it hit the ground?',
+    steps: [
+      'Set h(t) = 0:  a = −16,  b = 32,  c = 5',
+      'Discriminant:  b² − 4ac = 1024 − 4(−16)(5) = 1024 − 320 = 704',
+      't = (−32 ± √704) / (2 × −16)  ≈  (−32 ± 26.5) / −32',
+      'Discard negative t:  t ≈ 1.83 seconds'
+    ],
+    wrongStep: 2,
+    explain: 'Step 2 is wrong. −4ac = −4(−16)(5) = +320, not −320. The discriminant is 1024 + 320 = 1344. With √1344 ≈ 36.7, t = (−32 − 36.7) / −32 ≈ 2.15 seconds.'
+  },
+  {
+    title: 'Rectangle Area Problem',
+    problem: "A rectangle's length is 3 more than its width and its area is 40 sq ft. Find the dimensions.",
+    steps: [
+      'Let width = w,  length = w + 3',
+      'Set up equation:  w(w + 3) = 40  →  w² + 3w − 40 = 0',
+      'Factor:  (w + 10)(w − 4) = 0,  so  w = −10  or  w = 4',
+      'Discard negative:  width = 4 ft,  length = 7 ft'
+    ],
+    wrongStep: 3,
+    explain: 'Step 3 is wrong. (w + 10)(w − 4) = w² + 6w − 40, not w² + 3w − 40. The correct factors must add to 3: that is 8 and −5, since (8)(−5) = −40 ✓ and 8 + (−5) = 3 ✓. So (w + 8)(w − 5) = 0, giving w = 5. Width = 5 ft, length = 8 ft (check: 5 × 8 = 40 ✓).'
   }
 ];
 
@@ -94,7 +141,7 @@ const ENEMIES = [
 const HP_MAX        = 100;
 const CORRECT_HEAL  = 8;
 const WRONG_DAMAGE  = 22;
-const ROOM_COUNT    = 6;
+const ROOM_COUNT    = 8;
 const COMBAT_TIME   = 90; // seconds per combat room
 
 // ── State ─────────────────────────────────────────────────────────

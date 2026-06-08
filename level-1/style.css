@@ -58,5 +58,17 @@ body { margin: 0; background: var(--bg, #f0f6ff); font-family: sans-serif; }
 .end-btns { display: flex; gap: 12px; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
 .restart-btn { padding: 10px 24px; font-size: 15px; cursor: pointer; background: #f0f0f0; color: #111; border: 0.5px solid #aaa; border-radius: 8px; transition: background 0.2s; text-decoration: none; }
 .restart-btn:hover { background: #e0e0e0; }
-.next-btn { padding: 10px 24px; font-size: 15px; cursor: pointer; background: #1a5fa0; color: #fff; border: none; border-radius: 8px; transition: background 0.2s; text-decoration: none; display: inline-flex; align-items: center; }
+.next-btn { padding: 10px 24px; font-size: 15px; cursor: pointer; background: #1a5fa0; color: #fff; border: none; border-radius: 8px; transition: background 0.2s; text-decoration: none; display: inline-flex; align-items: center; font-family: sans-serif; }
 .next-btn:hover { background: #0d4a7a; }
+
+/* ── Post-answer explanation panel ── */
+.explanation-box {
+  background: #e8f4fd;
+  border-left: 4px solid #1a5fa0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #1a3a5c;
+  line-height: 1.65;
+  margin-top: 0.75rem;
+}

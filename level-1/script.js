@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
       question: "How many zeroes/solutions are there?",
       options: ["0", "1", "2", "3"],
       correct: "2",
+      explanation: "Zeroes are another name for x-intercepts — where the parabola crosses the x-axis. Since this parabola intersects the x-axis two times, there are two zeroes.",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1SCpe1r-gRYuYgnio1BWnsbdwT5vBSj6F=w1000?authuser=0';
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
       question: "What are the zeroes or roots of this graph? (Write using the form x={a,b} where a and b represent the x-values of the roots",
       options: ["(-2,5)", "(1,4)", "(-1,3)", "(-1,2)"],
       correct: "(-1,3)",
+      explanation: "Since the zeroes are also the x-intercepts, the answers are (-1, 0) and (3, 0). But the question asks for the form x={a,b} — using only the x-values. So the answer is x={-1, 3}.",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1SCpe1r-gRYuYgnio1BWnsbdwT5vBSj6F=w1000?authuser=0';
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
       question: "Identify the vertex of this graph: (Write using ordered pairs)",
       options: ["(2,7.5)", "(2.5,7)", "(1,7)", "(1,-8)"],
       correct: "(1,-8)",
+      explanation: "The vertex is the maximum or minimum point of the parabola. Since the 'a' value is greater than zero, the parabola opens upward, making the vertex the minimum value. Based on this graph, the vertex is (1, -8).",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1SCpe1r-gRYuYgnio1BWnsbdwT5vBSj6F=w1000?authuser=0';
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       question: "Identify the axis of symmetry for this graph: (Write using the form x=a where a represents the axis of symmetry or the x-value of the vertex)",
       options: ["1", "x=3", "x=1", "x=-1"],
       correct: "x=1",
+      explanation: "The axis of symmetry is the x-value of the vertex. The vertex is (1, -8), so the x-value is 1. Written in the required form: x=1.",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1SCpe1r-gRYuYgnio1BWnsbdwT5vBSj6F=w1000?authuser=0';
@@ -45,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
       question: "What is the y-intercept of this graph?",
       options: ["(0,6)", "4", "-6", "(0,-6)"],
       correct: "(0,-6)",
+      explanation: "The y-intercept — always written as an ordered pair — is where the parabola crosses the y-axis. This graph shows the parabola crossing the y-axis at (0, -6).",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1SCpe1r-gRYuYgnio1BWnsbdwT5vBSj6F=w1000?authuser=0';
@@ -55,50 +60,51 @@ document.addEventListener('DOMContentLoaded', function () {
       question: "How many zeroes/solutions are there?",
       options: ["0", "1", "2", "3"],
       correct: "1",
+      explanation: "Zeroes are another name for x-intercepts — where the parabola crosses the x-axis. This parabola touches the x-axis only one time, so there is exactly one zero.",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1FwTEAycWWmCf9PeKaUuQyT0FVhQKnGMu=w1000?authuser=0';
         img.onload = () => ctx.drawImage(img, 0, 0, w, h);
       }
     },
-
     {
       question: "What is the zero or roots of this graph? (Write using the form x=b where b represents the x-value of the root)",
       options: ["x=3", "x=1.75", "x=4", "x=2"],
       correct: "x=3",
+      explanation: "The zero is the x-intercept — where the parabola touches the x-axis. The answer is (3, 0). Using only the x-value in the required form: x={3}.",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1FwTEAycWWmCf9PeKaUuQyT0FVhQKnGMu=w1000?authuser=0';
         img.onload = () => ctx.drawImage(img, 0, 0, w, h);
       }
     },
-
     {
       question: "Identify the vertex of this graph: (Write using ordered pairs)",
       options: ["(0,3)", "(3,0)", "(9,0)", "(0,3)"],
       correct: "(3,0)",
+      explanation: "The vertex is the maximum or minimum point of the parabola. Since 'a' is greater than zero, the parabola opens upward, making the vertex the minimum. Based on this graph, the vertex is (3, 0).",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1FwTEAycWWmCf9PeKaUuQyT0FVhQKnGMu=w1000?authuser=0';
         img.onload = () => ctx.drawImage(img, 0, 0, w, h);
       }
     },
-
- {
+    {
       question: "Identify the axis of symmetry for this graph: (Write using the form x=a where a represents the axis of symmetry or the x-value of the vertex)",
       options: ["x=3", "x=9", "x=0", "x=4"],
       correct: "x=3",
+      explanation: "The axis of symmetry is the x-value of the vertex. The vertex is (3, 0), so the x-value is 3. Written in the required form: x=3.",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1FwTEAycWWmCf9PeKaUuQyT0FVhQKnGMu=w1000?authuser=0';
         img.onload = () => ctx.drawImage(img, 0, 0, w, h);
       }
     },
-
- {
+    {
       question: "What is the y-intercept of this graph?",
       options: ["(0,6)", "(3,0)", "(0,9)", "(4,0)"],
       correct: "(0,9)",
+      explanation: "The y-intercept — always written as an ordered pair — is where the parabola crosses the y-axis. This graph shows the parabola crossing the y-axis at (0, 9).",
       drawQ: (ctx, w, h) => {
         const img = new Image();
         img.src = 'https://lh3.googleusercontent.com/d/1FwTEAycWWmCf9PeKaUuQyT0FVhQKnGMu=w1000?authuser=0';
@@ -174,6 +180,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function loadQuestion() {
     document.getElementById('msg').textContent = '';
     document.getElementById('msg').className = 'msg';
+    document.getElementById('explanation-box').style.display = 'none';
+    document.getElementById('next-btn').style.display = 'none';
     document.getElementById('q-text').textContent = quizData[currentQ].question;
     drawQuestionImg();
     const opts = document.getElementById('options');
@@ -193,32 +201,43 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function selectAnswer(opt, btn) {
-    const correct = quizData[currentQ].correct;
+    const qIndex = currentQ;
+    const correct = quizData[qIndex].correct;
     const allBtns = document.querySelectorAll('.opt-btn');
     allBtns.forEach(b => b.disabled = true);
+
     if (opt === correct) {
       btn.classList.add('correct');
-      document.getElementById('msg').textContent = 'Correct! The ice melts away...';
+      document.getElementById('msg').textContent = '✓ Correct! The ice melts away...';
       document.getElementById('msg').className = 'msg ok';
-      score++; meltNextTiles(); currentQ++;
-      updateProgress();
-      setTimeout(() => {
-        if (currentQ < quizData.length) loadQuestion();
-        else endGame();
-      }, 1600);
+      score++;
+      meltNextTiles();
     } else {
       btn.classList.add('wrong');
       allBtns.forEach(b => { if (b.textContent === correct) b.classList.add('correct'); });
-      document.getElementById('msg').textContent = 'Incorrect. Moving to the next question.';
+      document.getElementById('msg').textContent = '✗ Incorrect. The correct answer is highlighted above.';
       document.getElementById('msg').className = 'msg err';
       flashWrong();
-      setTimeout(() => {
-        currentQ++;
-        updateProgress();
-        if (currentQ < quizData.length) loadQuestion();
-        else endGame();
-      }, 1600);
     }
+
+    // Show explanation for this question
+    const exBox = document.getElementById('explanation-box');
+    exBox.textContent = quizData[qIndex].explanation;
+    exBox.style.display = 'block';
+
+    // Show Next / Results button
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.textContent = qIndex < quizData.length - 1 ? 'Next Question →' : 'See Results →';
+    nextBtn.style.display = 'inline-flex';
+  }
+
+  function advanceQuestion() {
+    document.getElementById('explanation-box').style.display = 'none';
+    document.getElementById('next-btn').style.display = 'none';
+    currentQ++;
+    updateProgress();
+    if (currentQ < quizData.length) loadQuestion();
+    else endGame();
   }
 
   function endGame() {
@@ -252,6 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.restart = restart;
+  window.advanceQuestion = advanceQuestion;
 
   drawCharacter();
   buildIceGrid();
