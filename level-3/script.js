@@ -95,7 +95,7 @@ const HP_MAX        = 100;
 const CORRECT_HEAL  = 8;
 const WRONG_DAMAGE  = 22;
 const ROOM_COUNT    = 6;
-const COMBAT_TIME   = 12; // seconds per combat room
+const COMBAT_TIME   = 90; // seconds per combat room
 
 // ── State ─────────────────────────────────────────────────────────
 let gameRunning  = false;
