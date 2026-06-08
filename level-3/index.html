@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 3 – Quadratic Dungeon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+
+  <div class="dungeon-bg" aria-hidden="true">
+    <div class="torch torch-l"></div>
+    <div class="torch torch-r"></div>
+  </div>
+
+  <a href="../welcome/index.html" id="map-btn">← Map</a>
+
+  <div id="hud">
+    <div class="hp-wrap">
+      <span class="hp-icon">❤️</span>
+      <div class="hp-bar-wrap"><div id="hp-bar"></div></div>
+      <span id="hp-disp">100</span>
+    </div>
+    <div class="pill">🚪 Room <span id="room-disp">1</span> / <span id="room-total">6</span></div>
+  </div>
+
+  <div id="stage">
+
+    <!-- Door room: Error Analysis (no timer) -->
+    <div class="room-card" id="door-room" style="display:none">
+      <div class="room-icon">🚪</div>
+      <h2 class="room-title">A Sealed Door</h2>
+      <p class="room-flavor">A student's work is carved into the stone. Find which step is wrong to pass!</p>
+
+      <div class="problem-card">
+        <div class="problem-label">The Problem</div>
+        <div class="problem-text" id="door-problem"></div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-label">📜 Student's Work</div>
+        <div class="steps-list" id="door-steps"></div>
+      </div>
+
+      <p class="prompt-txt">Which step contains the error?</p>
+      <div class="step-btn-grid" id="door-step-btns"></div>
+
+      <div class="result-card" id="door-result" style="display:none">
+        <div class="result-msg" id="door-result-msg"></div>
+        <div class="result-explain" id="door-result-explain"></div>
+        <button class="btn btn-continue" id="door-continue">Continue →</button>
+      </div>
+    </div>
+
+    <!-- Combat room: Word Problems (timer!) -->
+    <div class="room-card" id="combat-room" style="display:none">
+      <div class="room-icon" id="enemy-icon">👹</div>
+      <h2 class="room-title" id="enemy-name">A Puzzle Guardian!</h2>
+      <p class="room-flavor">It forces you to check a student's word problem — find the error before time runs out!</p>
+
+      <div class="problem-card">
+        <div class="problem-label">The Problem</div>
+        <div class="problem-text" id="combat-problem"></div>
+      </div>
+
+      <div class="steps-card">
+        <div class="steps-label">📋 Student's Work</div>
+        <div class="steps-list" id="combat-steps"></div>
+      </div>
+
+      <div class="timer-wrap"><div id="combat-timer-bar"></div></div>
+
+      <p class="prompt-txt">Which step contains the error?</p>
+      <div class="step-btn-grid" id="combat-step-btns"></div>
+
+      <div class="result-card" id="combat-result" style="display:none">
+        <div class="result-msg" id="combat-result-msg"></div>
+        <div class="result-explain" id="combat-result-explain"></div>
+        <button class="btn btn-continue" id="combat-continue">Continue →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Start -->
+  <div class="overlay" id="start-screen">
+    <div class="char-lineup">🕵️📜👹</div>
+    <h1>Quadratic Dungeon</h1>
+    <p>Every door and enemy guards a student's math work — and something is wrong with it. Read every step carefully and <strong>tap the step that contains the error</strong>. Door rooms let you think. Combat rooms have a timer — move fast!</p>
+    <button class="btn" onclick="startGame()">Enter the Dungeon 🔦</button>
+    <a href="../welcome/index.html" class="btn btn-back">← Back to Map</a>
+  </div>
+
+  <!-- End -->
+  <div class="overlay" id="end-screen" style="display:none">
+    <h1 id="end-title">You Escaped!</h1>
+    <div class="big-num" id="end-hp">100</div>
+    <div class="sub-txt">HP remaining</div>
+    <div id="results-list"></div>
+    <p id="end-msg"></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <button class="btn" onclick="startGame()">Try Again 🔦</button>
+      <a href="../welcome/index.html" class="btn btn-back">← Back to Map</a>
+    </div>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
